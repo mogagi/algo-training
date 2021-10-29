@@ -1,0 +1,10 @@
+loop:
+  icAbs:
+    nThreads: 2
+    lw: 0.007
+    hw: 0.0095
+alert:
+  combo:
+    loop: IcAbsLoop
+  time:
+    loop: IcAbsLoop
