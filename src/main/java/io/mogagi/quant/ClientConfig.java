@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 
 /**
  * @author mogagi
- * @date 2021/10/22 22:52
+ * @since 2021/10/22 22:52
  */
 @Configuration
 public class ClientConfig {

@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author mogagi
- * @date 2021/10/22 23:15
+ * @since 2021/10/22 23:15
  */
 @Configuration
 @RequiredArgsConstructor(onConstructor_ = @Autowired)

@@ -16,7 +16,7 @@ import static io.mogagi.quant.supports.Constant.AFTERNOON_CLOSE;
 
 /**
  * @author mogagi
- * @date 2021/10/27 7:43
+ * @since 2021/10/27 7:43
  */
 @Slf4j
 @Component
