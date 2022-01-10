@@ -1,3 +1,1 @@
-object Hello {
-  @main def hello = println("Hello, world!")
-}
+@main def hello = println("Hello, world!")
