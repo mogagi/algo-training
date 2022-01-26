@@ -24,7 +24,7 @@ public class LoopConfig {
     @Bean
     public Oscillator oscillator() {
         Oscillator Oscillator = new Oscillator(5, TimeUnit.SECONDS);
-        Oscillator.notify(sinaLoop); // TODO barrier
+        Oscillator.notify(sinaLoop);
         barrierLoop.notify(sinaLoop);
         sinaLoop.notify(icAbsLoop);
         icAbsLoop.notify(alertLoop);

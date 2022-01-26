@@ -1,3 +1,5 @@
 package io.mogagi.quant
 
-@main def hello = println("Hello, world!")
+object Hello extends App {
+  println("Hello, world")
+}
