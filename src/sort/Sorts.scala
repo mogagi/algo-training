@@ -1,43 +1,31 @@
 package sort
 
+import scala.collection.mutable
+
 object Sorts extends App {
   val unsorted = List(3, 12, 43, 23, 7, 1, 2, 0)
-  val sort: List[Int] => List[Int] = quickSort0
+  val sort: List[Int] => List[Int] = selectionSort
   assert(unsorted.sorted == sort(unsorted))
   assert(List() == sort(List()))
 }
 
-/* bubble */
-def bubbleSort(list: List[Int]): List[Int] = list match {
-  case List() => List()
-  case head :: tail => compute(head, bubbleSort(tail))
-}
-
-def compute(data: Int, dataSet: List[Int]): List[Int] = dataSet match {
-  case List() => List(data)
-  case head :: tail => if (data <= head) data :: dataSet else head :: compute(data, tail)
-}
-
 /* selection */
 def selectionSort(xs: List[Int]): List[Int] = {
-  def minimum(xs: List[Int]): List[Int] = (List(xs.head) /: xs.tail) {
-    (ys, x) =>
-      if (x < ys.head) (x :: ys)
-      else (ys.head :: x :: ys.tail)
+  def minimum(xs: List[Int]): List[Int] = (List(xs.head) foldLeft xs.tail) {
+    (ys, x) => if x < ys.head then x :: ys else ys.head :: x :: ys.tail
   }
 
-  if (xs.isEmpty) List()
+  if xs.isEmpty then List()
   else {
     val ys = minimum(xs)
-    if ys.tail.isEmpty then ys
-    else ys.head :: selectionSort(ys.tail)
+    if ys.tail.isEmpty then ys else ys.head :: selectionSort(ys.tail)
   }
 }
 
 /* insert */
 
 /* quick */
-def quickSort(list: List[Int]): List[Int] = list match {
+def quickSort(xs: List[Int]): List[Int] = xs match {
   case Nil => Nil
   case List() => List()
   case head :: tail => val (left, right) = tail.partition(_ < head)
