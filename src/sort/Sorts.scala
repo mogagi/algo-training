@@ -32,7 +32,7 @@ def quickSort(xs: List[Int]): List[Int] = xs match {
     quickSort(left) ::: head :: quickSort(right)
 }
 
-def quickSort0(list: List[Int]): List[Int] = if list.length < 2 then list else quickSort0(list.filter(_ < list.head)) ::: list.head :: quickSort0(list.filter(_ > list.head))
+def quickSort0(arr: Array[Int]): Array[Int] = if arr.length < 2 then arr else quickSort0(arr.filter(_ < arr.head)) :+ arr.head :++ quickSort0(arr.filter(_ > arr.head))
 
 /* merge */
 def mergedSort[T](less: (T, T) => Boolean)(list: List[T]): List[T] = {
